@@ -16,8 +16,15 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "dotenv": "^8.2.0",
+    "formik": "^2.2.6",
     "gatsby": "^3.4.0",
+    "netlify-cli": "^3.26.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "sweetalert2": "^10.16.7",
+    "yup": "^0.32.9"
   }
 }
