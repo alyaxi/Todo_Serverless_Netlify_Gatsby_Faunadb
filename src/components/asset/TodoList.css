@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-::selection{
+/* ::selection{
     color: #ffff;
     background: rgb(142, 73, 232);
-  }
+  } */
 
 *{
     margin: 0;
@@ -12,7 +12,7 @@
   }
   body{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     padding: 10px;
     background: linear-gradient(to top, #1d3a6d 0%, #3742fa 100%);
@@ -65,5 +65,10 @@
     /* overflow:hidden */
 
 }
+.newdate{
+  position: absolute;
+  top: 14px;
+  font-size: 8px;
+} 
 
 

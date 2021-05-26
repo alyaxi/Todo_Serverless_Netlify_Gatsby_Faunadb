@@ -5,7 +5,9 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import AddTodo from "./addTodo";
 import DeleteTodo from "./DeleteTodo";
 import UpdateTodo from "./UpdateTask";
-import "./CSS/TodoList.css"
+import "./asset/TodoList.css";
+import { boolean } from "yup";
+
 
 // crud netlify functions url
 const url = "/.netlify/functions/todocrud/";
@@ -15,9 +17,15 @@ const fetchTodo = async () => {
   return await fetch(url)
     .then((data) => data.json())
     .then((data) => {
-      return data;
+      
+      return data
+      
+
     });
 };
+
+
+
 
 // Use material Ui UseStyle
 const useStyles = makeStyles((theme: Theme) =>
@@ -31,11 +39,10 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 //Todo Main Compoenent and Fetched all Todos over here
 const TodoList = () => {
-  const [todos, setTodos] = React.useState([]);
+  const [todos, setTodos]:any = React.useState<boolean[]>([]);
   const [task, setTask] = React.useState("");
   const [fetchData, setFetchData] = React.useState(false);
-
-  const classes = useStyles();
+ 
 
   React.useEffect(() => {
     (async () => {
@@ -45,6 +52,8 @@ const TodoList = () => {
       setFetchData(false);
     })();
   }, [fetchData]);
+
+  
   return (
     <div className="wrapper">
       <header>Todo App</header>
@@ -52,25 +61,36 @@ const TodoList = () => {
       <Grid >
         <Grid item xs={6} sm={4}>
           <ul className="List" >
-            {todos.map((task) => (
+          {todos == false ? <div className="list-indv">
+            Please add Some task
+          </div> : 
+             todos.map((task) => (
               <div key={task.ref["@ref"].id} className="list-indv">
-                <li>{task.data.task}
-                <div className="buttons">
-                <UpdateTodo
-                  task={task}
-                  setTask={setTask}
-                  setFetchData={setFetchData}
-                />
-                <DeleteTodo task={task} setFetchData={setFetchData} />
-                </div>
-                
-                </li>
-                
-                
-                </div>
+             
+             <li> 
+              {task.data.task}
+              <br />
+              <span className="newdate">Dated: {task.data.date}</span>
+              
+              <div className="buttons">
+              <UpdateTodo
+                task={task}
+                setTask={setTask}
+                setFetchData={setFetchData}
+              />
+              <DeleteTodo task={task} setFetchData={setFetchData} />
+              </div>
+              
+              </li>
+              
+              
+              </div>
+             
            
               
-            ))}
+            
+          ))}
+         
           </ul>
         </Grid>
       </Grid>

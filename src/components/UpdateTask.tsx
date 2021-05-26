@@ -12,6 +12,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import Swal from "sweetalert2";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import Moment from "moment"
 
 const url = "/.netlify/functions/todocrud/";
 
@@ -49,9 +50,10 @@ export default function UpdateTask({ setTask, setFetchData, task }) {
   };
 
   const updateTodo = async (id, task) => {
+    let date = Moment().format('HH:mm  DD-MM-YYYY')
     return await fetch(`${url}/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ task }),
+      body: JSON.stringify({ task, date }),
     })
       .then((res) => res.json())
       .then((data) => {

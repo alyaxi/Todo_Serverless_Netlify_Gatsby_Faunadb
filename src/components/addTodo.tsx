@@ -3,15 +3,20 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
+import Moment from "moment"
 
 const url = "/.netlify/functions/todocrud/";
 
 const AddTodo = ({task, setTask, setFetchData}) => {
+ 
   
   const addTodo = async (task) => {
+    let date = Moment().format('HH:mm  DD-MM-YYYY')
+    console.log(date);
+    
     let data = await fetch(url, {
       method: "POST",
-      body: JSON.stringify({ task }),
+      body: JSON.stringify({ task, date }),
     }).then((res) => {
       const Toast = Swal.mixin({
         toast: true,
@@ -36,7 +41,6 @@ const AddTodo = ({task, setTask, setFetchData}) => {
       .min(4, "Must be greater than or equals to 4 characters")
       .max(18, "Not More than 18 characters"),
   });
-
   return (
     <Formik
       initialValues={{ task: task }}
@@ -47,6 +51,7 @@ const AddTodo = ({task, setTask, setFetchData}) => {
         resetForm();
         addTodo(value.task);
         setFetchData(true);
+
       }}
     >
       {(formik: any) => (
@@ -64,6 +69,7 @@ const AddTodo = ({task, setTask, setFetchData}) => {
                   autoComplete="off"
                   fullWidth
                 />
+                
                 <br />
                 <ErrorMessage
                   name="task"
