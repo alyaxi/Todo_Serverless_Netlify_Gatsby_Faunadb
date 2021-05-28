@@ -4,11 +4,16 @@
   "description": "",
   "main": "todocrud.js",
   "scripts": {
-    "build": "npm install"
+    "gatsby": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  
   "dependencies": {
     "faunadb": "^4.3.0"
   }

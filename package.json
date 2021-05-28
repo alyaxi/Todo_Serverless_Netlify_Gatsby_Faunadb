@@ -8,8 +8,11 @@
     "gatsby"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "gatsby": "gatsby develop"
+    "gatsby": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "license": "0BSD",
   "dependencies": {
