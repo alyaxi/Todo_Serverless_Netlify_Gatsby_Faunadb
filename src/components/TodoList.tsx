@@ -1,16 +1,16 @@
 import * as React from "react";
 import { Grid } from "@material-ui/core";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+// import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 //Import Components
 import AddTodo from "./addTodo";
 import DeleteTodo from "./DeleteTodo";
 import UpdateTodo from "./UpdateTask";
 import "./asset/TodoList.css";
-import { boolean } from "yup";
+
 
 
 // crud netlify functions url
-const url = "/.netlify/functions/todocrud/";
+const url = "/.netlify/functions/";
 
 // All todo List Fetched
 const fetchTodo = async () => {
@@ -28,15 +28,15 @@ const fetchTodo = async () => {
 
 
 // Use material Ui UseStyle
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: "100%",
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-    },
-  })
-);
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       width: "100%",
+//       maxWidth: 360,
+//       backgroundColor: theme.palette.background.paper,
+//     },
+//   })
+// );
 //Todo Main Compoenent and Fetched all Todos over here
 const TodoList = () => {
   const [todos, setTodos]:any = React.useState<boolean[]>([]);

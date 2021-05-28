@@ -14,7 +14,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Moment from "moment"
 
-const url = "/.netlify/functions/todocrud/";
+const url = "/.netlify/functions/";
 
 export default function UpdateTask({ setTask, setFetchData, task }) {
   const useStyles = makeStyles((theme: Theme) =>
