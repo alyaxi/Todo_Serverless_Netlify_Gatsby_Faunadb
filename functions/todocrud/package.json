@@ -4,16 +4,11 @@
   "description": "",
   "main": "todocrud.js",
   "scripts": {
-    "gatsby": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  
   "dependencies": {
     "faunadb": "^4.3.0"
   }

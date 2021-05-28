@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import * as Yup from "yup";
 import Moment from "moment"
 
-const url = "/.netlify/functions/";
+const url = ".netlify/functions/todocrud/";
 
 const AddTodo = ({task, setTask, setFetchData}) => {
  

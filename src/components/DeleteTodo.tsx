@@ -3,7 +3,7 @@ import React from 'react'
 import Swal from "sweetalert2";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-const url = "/.netlify/functions/";
+const url = ".netlify/functions/todocrud/";
 
 export default function DeleteTodo({task, setFetchData}) {
     const deleteTodo = async (id) => {

@@ -10,7 +10,7 @@ import "./asset/TodoList.css";
 
 
 // crud netlify functions url
-const url = "/.netlify/functions/";
+const url = ".netlify/functions/todocrud/";
 
 // All todo List Fetched
 const fetchTodo = async () => {
