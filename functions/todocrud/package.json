@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faunadb": "^4.2.0"
+    "faunadb": "^4.3.0"
   }
 }
